@@ -2,6 +2,7 @@ import Error from "../components/Error";
 import SongCard from "../components/SongCard";
 import Loader from "../components/Loader";
 import { genres } from "../assets/constants";
+import { useGetChartsQuery } from "../redux/service/shazamAPI";
 
 const Discover = () => {
   console.log(genres);
