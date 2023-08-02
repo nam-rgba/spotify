@@ -5,8 +5,11 @@ import { genres } from "../assets/constants";
 import { useGetChartsQuery } from "../redux/service/shazamAPI";
 
 const Discover = () => {
-  console.log(genres);
-  const temp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const { dataCharts, isFetching, error } = useGetChartsQuery();
+  console.log(dataCharts);
+
+  // if (isFetching) return <Loader title="Still loading..." />;
+  // if (error) return <Error />;
   const genne = "Pop";
   return (
     <div className="flex flex-col w-full    ">
@@ -27,9 +30,9 @@ const Discover = () => {
         </select>
       </div>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {temp.map((song, i) => (
-          <SongCard key={song.key} song={song} i={i} />
-        ))}
+        {/* {dataCharts.map((song, i) => (
+          <SongCard key={song.key} />
+        ))} */}
       </div>
     </div>
   );

@@ -7,13 +7,13 @@ export const shazamAPI = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "X-RapidAPI-Key",
-        "3c83199b07mshbeceac5981bede3p1e9d0bjsne85bc49c2945"
+        import.meta.env.VITE_SHAZAM_CORE_RAPID_API_KEY
       );
       return headers;
     },
   }),
   endpoints: (builder) => ({
-    getCharts: builder.query({ query: "/charts/track" }),
+    getCharts: builder.query({ query: () => "/charts/track" }),
   }),
 });
 
